@@ -1,0 +1,755 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Health & Fitness | Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/themify-icons.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<style>
+
+
+
+
+    /* Split container for image + card */
+.auth-split-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 5rem auto 7rem;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Left side: auth card */
+.auth-card {
+  flex: 1;
+  background: #111;
+  padding: 3rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 3px solid #FFD700;
+}
+
+/* Tabs */
+.auth-tabs {
+  display: flex;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid #444;
+}
+
+.auth-tab {
+  flex: 1;
+  text-align: center;
+  padding: 18px 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #bbb;
+  user-select: none;
+  transition: color 0.4s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.auth-tab.active {
+  color: #FFD700;
+  border-bottom-color: #FFD700;
+  background: #111;
+}
+
+/* Forms */
+.auth-form {
+  display: none;
+  flex-direction: column;
+}
+
+.auth-form.active {
+  display: flex;
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  color: #FFD700;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1.1rem;
+}
+
+input {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: outline 0.3s ease;
+}
+
+input:focus {
+  outline: 3px solid #FFD700;
+  background-color: #111;
+}
+
+.auth-btn {
+  background-color: #FFD700;
+  color: #000;
+  font-weight: 900;
+  font-size: 1.3rem;
+  padding: 16px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.7);
+}
+
+.auth-btn:hover {
+  background-color: #e6c200;
+  box-shadow: 0 6px 14px rgba(255, 215, 0, 0.9);
+}
+
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.form-footer a {
+  color: #FFD700;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Right side: image section */
+.auth-image-section {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 3rem;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7));
+}
+
+.auth-image-section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.5);
+  transition: transform 0.5s ease;
+}
+
+.auth-image-section:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,215,0,0.3) 0%, rgba(255,215,0,0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image-text {
+  position: relative;
+  z-index: 2;
+  max-width: 280px;
+}
+
+.image-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+}
+
+.image-text p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  .auth-split-container {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .auth-card {
+    border-right: none;
+    border-bottom: 3px solid #FFD700;
+    padding: 2.5rem 2rem 3rem;
+  }
+
+  .auth-image-section {
+    height: 300px;
+    padding: 1.5rem 2rem;
+  }
+
+  .image-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .image-text p {
+    font-size: 1rem;
+  }
+}
+
+</style>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!--? Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                       <!-- Logo -->
+<div class="col-xl-2 col-lg-2 col-md-1">
+  <div class="logo">
+    <a href="index.html" style="display: flex; align-items: center; font-size: 20px; color: #fff; font-weight: bold; text-decoration: none;">
+      <i class="fas fa-hand-fist" style="font-size: 28px; margin-right: 8px; color: #FFD700;"></i>
+      <span style="font-family: 'Poppins', sans-serif;">Tiger Martial Arts</span>
+    </a>
+  </div>
+</div>
+
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="menu-main d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="schedule.html">schedule</a></li>
+                                            <li><a href="instructors.html">Instructors</a></li>
+                                            <li><a href="memberships.html">Memberships</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                    <a href="from.html" class="btn header-btn">became a member</a>
+                                </div>
+                            </div>
+                        </div>   
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+ <!--? Slider Area Start -->
+<div class="slider-area position-relative">
+    <div class="slider-active">
+
+        <!-- Slide 1: About Us -->
+        <div class="single-slider slider-height d-flex align-items-center" style="background-color: #000; height: 60vh;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
+                        <div class="hero__caption" style="color: white;">
+                            <span data-animation="fadeInLeft" data-delay="0.1s" style="font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
+                                Contact Us
+                            </span>
+                            <h1 data-animation="fadeInLeft" data-delay="0.4s" style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem;">
+                                Tiger Martial Arts | Strength, Discipline &amp; Community
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+
+        <!-- Slide 2: About Us - Optional second slide -->
+        <div class="single-slider slider-height d-flex align-items-center" style="background-color: #000; height: 60vh;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
+                        <div class="hero__caption" style="color: white;">
+                            <span data-animation="fadeInLeft" data-delay="0.1s" style="font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
+                                Our Mission
+                            </span>
+                            <h1 data-animation="fadeInLeft" data-delay="0.4s" style="font-size: 2rem; font-weight: 600; margin-top: 0.5rem;">
+                                Empowering You Through Discipline and Community Spirit
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+
+    </div>
+</div>
+<!--? Slider Area End -->
+
+
+
+<!-- Video icon -->
+<div class="video-icon">
+    <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i class="fas fa-play"></i></a>
+</div>
+
+
+     <!-- Add this inside your <main> or wherever suitable -->
+
+<section class="auth-split-container" aria-label="Authentication with image">
+  <div class="auth-card">
+    <div class="auth-tabs" role="tablist">
+      <div class="auth-tab active" id="signin-tab" role="tab" tabindex="0" aria-selected="true" aria-controls="signin-form" onclick="toggleForm('signin')">Sign In</div>
+      <div class="auth-tab" id="signup-tab" role="tab" tabindex="0" aria-selected="false" aria-controls="signup-form" onclick="toggleForm('signup')">Register</div>
+    </div>
+
+    <!-- Sign In Form -->
+    <div class="auth-form active" id="signin-form" role="tabpanel" aria-labelledby="signin-tab">
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="signin-email"><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="signin-password"><i class="fas fa-lock"></i> Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password" />
+        </div>
+        <button type="button" class="auth-btn" onclick="login()">Log In</button>
+        <div class="form-footer">
+          <p>Don't have an account? <a href="#" onclick="toggleForm('signup'); return false;">Sign up here</a></p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Register Form -->
+    <div class="auth-form" id="signup-form" role="tabpanel" aria-labelledby="signup-tab">
+      <form id="register-form" novalidate>
+        <div class="form-group">
+          <label for="signup-name"><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="full_name" name="fullname" placeholder="Enter your full name" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="signup-email"><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="signup-password"><i class="fas fa-lock"></i> Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required autocomplete="new-password" />
+        </div>
+        <button type="button" class="auth-btn" onclick="register()">Register</button>
+        <div class="form-footer">
+          <p>Already have an account? <a href="#" onclick="toggleForm('signin'); return false;">Sign in here</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  function toggleForm(form) {
+    const signinTab = document.getElementById('signin-tab');
+    const signupTab = document.getElementById('signup-tab');
+    const signinForm = document.getElementById('signin-form');
+    const signupForm = document.getElementById('signup-form');
+
+    if(form === 'signin') {
+      signinTab.classList.add('active');
+      signinTab.setAttribute('aria-selected', 'true');
+      signupTab.classList.remove('active');
+      signupTab.setAttribute('aria-selected', 'false');
+
+      signinForm.classList.add('active');
+      signupForm.classList.remove('active');
+    } else {
+      signupTab.classList.add('active');
+      signupTab.setAttribute('aria-selected', 'true');
+      signinTab.classList.remove('active');
+      signinTab.setAttribute('aria-selected', 'false');
+
+      signupForm.classList.add('active');
+      signinForm.classList.remove('active');
+    }
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+ <footer>
+    <!-- Footer Start -->
+    <div class="footer-area section-bg" data-background="assets/img/gallery/section_bg03.png" 
+         style="background-color: #111; padding: 60px 0 40px; color: #eee; font-family: 'Poppins', sans-serif;">
+        <div class="container">
+            <div class="footer-top footer-padding">
+                <div class="row d-flex justify-content-between">
+                    <!-- Company Info & Contact Brief -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div style="display: flex; flex-direction: column; gap: 20px; max-width: 420px; color: #eee;">
+                                <a href="index.html" 
+                                   style="display: flex; align-items: center; font-size: 28px; color: #FFD700; font-weight: 700; text-decoration: none;">
+                                    <i class="fas fa-hand-fist" style="font-size: 40px; margin-right: 10px;"></i>
+                                    <span>Tiger Martial Arts</span>
+                                </a>
+
+                                <p style="font-size: 1.1rem; color: #ccc; margin: 0;">
+                                    Tiger Martial Arts is dedicated to empowering our community through expert training, discipline, and respect. Established with a vision to nurture both physical strength and mental resilience, we provide tailored programs for all levels—from beginners to advanced martial artists. Our company values integrity, growth, and a supportive environment where everyone can thrive.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 20px;">Quick Links</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; color: #bbb;">
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Home</a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">About Us</a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Schedule</a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Instructors</a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Memberships</a>
+                                </li>
+                                <li>
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 20px;">Support</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; color: #bbb;">
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">FAQ</a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Privacy Policy</a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Terms of Service</a>
+                                </li>
+                                <li>
+                                    <a href="#" style="color: #bbb; text-decoration: none; transition: color 0.3s;">Contact Support</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom" style="border-top: 1px solid #333; padding-top: 20px; margin-top: 20px;">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-12">
+                        <p class="text-center" style="color: #777; font-size: 0.9rem; margin: 0;">
+                            &copy; <script>document.write(new Date().getFullYear());</script> Tiger Martial Arts. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+</footer>
+
+<!-- Optional: Add a hover effect on all footer links -->
+<style>
+    footer a:hover {
+        color: #FFD700 !important;
+    }
+</style>
+
+
+
+
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    
+ <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+ 
+ 
+    <!-- Our script must be loaded after firebase references -->
+    <script>
+         // Your web app's Firebase configuration
+ var firebaseConfig = {
+    apiKey: "AIzaSyDZlGbGQk_hm0ArKnijfLJZ4mK96Se3SpE",
+    authDomain: "tiger-martial-arts---farhana.firebaseapp.com",
+    projectId: "tiger-martial-arts---farhana",
+    storageBucket: "tiger-martial-arts---farhana.firebasestorage.app",
+    messagingSenderId: "291128126213",
+    appId: "1:291128126213:web:a6c5569d8a3e65fd63a56c",
+    measurementId: "G-3BCF8F6V50"
+  };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize variables
+const auth = firebase.auth()
+const database = firebase.database()
+ 
+// Set up our register function
+function register () {
+  // Get all our input fields
+  email = document.getElementById('email').value
+  password = document.getElementById('password').value
+  full_name = document.getElementById('full_name').value
+
+ 
+  // Validate input fields
+  if (validate_email(email) == false || validate_password(password) == false) {
+    alert('Email or Password is Outta Line!!')
+    return
+    // Don't continue running the code
+  }
+ 
+ 
+  // Move on with Auth
+  auth.createUserWithEmailAndPassword(email, password)
+  .then(function() {
+    // Declare user variable
+    var user = auth.currentUser
+ 
+    // Add this user to Firebase Database
+    var database_ref = database.ref()
+ 
+    // Create User data
+    var user_data = {
+      email : email,
+      full_name : full_name,
+      last_login : Date.now()
+    }
+ 
+    // Push to Firebase Database
+    database_ref.child('userdetails/' + user.uid).set(user_data)
+ 
+    // DOne
+    alert('User Created!!')
+  })
+  .catch(function(error) {
+    // Firebase will use this to alert of its errors
+    var error_code = error.code
+    var error_message = error.message
+ 
+    alert(error_message)
+  })
+}
+ 
+// Set up our login function
+function login () {
+  // Get all our input fields
+  full_name = document.getElementById('full_name').value
+  email = document.getElementById('email').value
+  password = document.getElementById('password').value
+ 
+  // Validate input fields
+  if (validate_email(email) == false || validate_password(password) == false) {
+    alert('Email or Password is Outta Line!!')
+    return
+    // Don't continue running the code
+  }
+ 
+  auth.signInWithEmailAndPassword(email, password)
+  .then(function() {
+    // Declare user variable
+    var user = auth.currentUser
+ 
+    // Add this user to Firebase Database
+    var database_ref = database.ref()
+ 
+    // Create User data
+    var user_data = {
+      last_login : Date.now()
+    }
+// 🔍 Fetch the full name from Firebase Database
+    database.ref('userdetails/' + user.uid).once('value').then(function(snapshot) {
+      var full_name = snapshot.val().full_name;
+ 
+      alert("User is logged in")
+      // ✅ Now redirect with name in URL
+      window.location.href = "dashboard.html?name=" + encodeURIComponent(full_name);
+    });
+ 
+ 
+  })
+  .catch(function(error) {
+    // Firebase will use this to alert of its errors
+    var error_code = error.code
+    var error_message = error.message
+ 
+    alert(error_message)
+  })
+}
+ 
+ 
+ 
+ 
+// Validate Functions
+function validate_email(email) {
+  expression = /^[^@]+@\w+(\.\w+)+\w$/
+  if (expression.test(email) == true) {
+    // Email is good
+    return true
+  } else {
+    // Email is not good
+    return false
+  }
+}
+ 
+function validate_password(password) {
+  // Firebase only accepts lengths greater than 6
+  if (password < 6) {
+    return false
+  } else {
+    return true
+  }
+}
+ 
+function validate_field(field) {
+  if (field == null) {
+    return false
+  }
+ 
+  if (field.length <= 0) {
+    return false
+  } else {
+    return true
+  }
+}
+    </script>
+
+
+
+
+
+
+    </body>
+</html>
